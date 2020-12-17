@@ -12,6 +12,8 @@
   </head>
 
   <body>
+
+    <%# フラッシュメッセージを追加%>
     <% if flash[:notice] %>
       <div class="notification is-info">
         <p class="notice"><%= notice %></p>
@@ -22,6 +24,7 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
+
     <%= yield %>
   </body>
 </html>
