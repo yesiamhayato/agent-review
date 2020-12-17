@@ -13,6 +13,7 @@
 ### Association
 
 - has_many :reviews
+- has_many :agents
 
 ## reviews テーブル
 
@@ -44,3 +45,4 @@
 ### Association
 
 - has_many :reviews
+- belongs_ to :user
