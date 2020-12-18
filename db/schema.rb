@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_092907) do
+ActiveRecord::Schema.define(version: 2020_12_18_025546) do
 
   create_table "agents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2020_12_17_092907) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_agents_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "agent_id", null: false
+    t.integer "score", null: false
+    t.integer "deal_type_id", null: false
+    t.integer "close_deal_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["agent_id"], name: "index_reviews_on_agent_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,4 +52,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_092907) do
   end
 
   add_foreign_key "agents", "users"
+  add_foreign_key "reviews", "agents"
+  add_foreign_key "reviews", "users"
 end
