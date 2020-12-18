@@ -14,6 +14,6 @@ class Agent < ApplicationRecord
     end
   end
 
-  has_many :reviews
+  has_many :reviews, dependet: :destory
   belongs_to :user
 end
