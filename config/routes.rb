@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
   devise_for :users
   root to: 'homes#top'
-  resources :agents, only: [:index, :show]
+  resources :agents, only: [:index, :show] do
+    resources :reviews, only: [:index, :create]
+  end
 end

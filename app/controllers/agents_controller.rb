@@ -5,5 +5,6 @@ class AgentsController < ApplicationController
 
   def show
     @agent = Agent.find(params[:id])
+    @review = Review.new
   end
 end
