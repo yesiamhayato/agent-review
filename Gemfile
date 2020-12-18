@@ -59,3 +59,5 @@ gem 'pry-rails'
 gem 'devise'
 
 gem 'bulma-rails'
+
+gem 'active_hash'
