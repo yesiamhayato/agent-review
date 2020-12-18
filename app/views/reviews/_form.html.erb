@@ -18,6 +18,6 @@
     <%= f.collection_select(:close_deal_id, CloseDeal.all, :id, :name, {include_blank: true, class:"genre-select"}) %>
     <%= f.text_field :content, class: "textarea" %>
     <%= f.submit "保存", class: "button mt-3" %>
-    <%= link_to "他のレビューを見る", agent_reviews_path(agent) %>
+    <%= link_to "他のレビューを見る", agent_reviews_path(agent), class: "button mt-3" %>
   <% end %>
 </div>
