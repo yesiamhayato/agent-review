@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to agent_reviews_path(@review.agent_id)
     else
-      @agent = Agent.find(params[:id])
+      @agent = Agent.find(params[:agent_id])
       render "agents/show"
     end
 
