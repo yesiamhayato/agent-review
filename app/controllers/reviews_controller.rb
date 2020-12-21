@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @agent = Agent.find(params[:agent_id])
     @reviews = @agent.reviews
