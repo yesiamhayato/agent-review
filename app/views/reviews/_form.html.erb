@@ -25,10 +25,14 @@
     </div>
     <%= f.hidden_field :agent_id, value: agent.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.collection_select(:deal_type_id, DealType.all, :id, :name, {include_blank: true, class:"genre-select"}) %>
-    <%= f.collection_select(:close_deal_id, CloseDeal.all, :id, :name, {include_blank: true, class:"genre-select"}) %>
+    <div class="select mb-1">
+      <%= f.collection_select(:deal_type_id, DealType.all, :id, :name, {include_blank: true, class:"genre-select"}) %>
+    </div>
+    <div class="select mb-1">
+      <%= f.collection_select(:close_deal_id, CloseDeal.all, :id, :name, {include_blank: true, class:"genre-select"}) %>
+    </div>
     <%= f.text_area :content, class: "textarea is-medium"%>
-    <%= f.submit "保存", class: "button mt-3" %>
+    <%= f.submit "保存", class: "button is-primary  mt-3" %>
     <%= link_to "他のレビューを見る", agent_reviews_path(agent), class: "button mt-3" %>
   <% end %>
 </div>

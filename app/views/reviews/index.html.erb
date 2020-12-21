@@ -31,7 +31,7 @@
               <tr>
                 <td><%= review.user.nickname %></td>
                 <td><%= review.score %></td>
-                <td><%= review.content %></td>
+                <td><%= simple_format(review.content) %></td>
               </tr>
             <% end %>
           </tbody>
