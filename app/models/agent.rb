@@ -14,6 +14,23 @@ class Agent < ApplicationRecord
     end
   end
 
+  def avg_score
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f
+    else
+      0.0
+    end
+  end
+
+  def review_score_percentage
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f / 5 * 100
+    else
+      0.0
+    end
+  end
+
+
   has_many :reviews, dependent: :destroy
   belongs_to :user
 end
