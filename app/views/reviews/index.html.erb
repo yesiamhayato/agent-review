@@ -1,7 +1,7 @@
 <section class="section mt-6">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-5">
+      <div class="column is-two-thirds">
         <div class="card mb-6">
           <header class="card-header">
             <p class="card-header-title">
@@ -23,24 +23,29 @@
             </div>
           </div>
         </div>
-        <div class="is-centered">
-        <table class="table is-fullwidth is-hoverable is-bordered">
-          <thead class="has-text-centered">
-            <tr>
-              <th>ユーザー名</th><th>点数</th><th>口コミ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.nickname %></td>
-                <td><%= review.score %></td>
-                <td><%= simple_format(review.content) %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+
+        <h4 class="title is-4 is-centered">口コミ</h4>
+
+
+        <% @reviews.each do |review| %>
+        <div class="card mb-4">
+          <header class="card-header">
+            <div class="card-header-title">
+              <%= review.user.nickname %>
+            </div>
+          </header>
+          <div class="card-content pt-2">
+            <div class="content">
+              <div class="star-rating mb-4">
+                <div class="star-rating-front" style="width: <%= review.score * 20 %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <%= simple_format(review.content) %>
+              <div class="has-text-right is-italic" ><%= l review.updated_at %></div>
+            </div>
+          </div>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
