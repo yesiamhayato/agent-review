@@ -5,5 +5,5 @@ class User < ApplicationRecord
   
   validates :nickname, presence: true
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 end

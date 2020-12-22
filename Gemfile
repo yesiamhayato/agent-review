@@ -59,3 +59,7 @@ gem 'pry-rails'
 gem 'devise'
 
 gem 'bulma-rails'
+
+gem 'active_hash'
+
+gem 'coffee-rails', '~> 4.2'

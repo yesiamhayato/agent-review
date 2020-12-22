@@ -1,0 +1,29 @@
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= @agent.last_name %> <%= @agent.first_name %>
+            </p>
+          </header>
+          <div class="card-content">
+            所属会社： <%= @agent.company_name %><br>
+            場所： <%= @agent.company_location %><br>
+            <div class="content average-score">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= @agent.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ml-3 pt-2">
+                <%= @agent.avg_score %>点（<%= @agent.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render 'reviews/form', review: @review, agent: @agent %>
+      </div>
+    </div>
+  </div>
+</section>
