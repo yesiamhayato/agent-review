@@ -6,6 +6,7 @@
           <header class="card-header">
             <p class="card-header-title">
               <%= @agent.last_name %> <%= @agent.first_name %>
+              <span class="has-text-weight-light is-italic is-size-7">(<%= @agent.last_name_kana %> <%= @agent.first_name_kana %>)</span>
             </p>
           </header>
           <div class="card-content">

@@ -6,9 +6,12 @@
           <header class="card-header">
             <p class="card-header-title">
               <%= @agent.last_name %> <%= @agent.first_name %>
+              <span class="has-text-weight-light is-italic is-size-7">(<%= @agent.last_name_kana %> <%= @agent.first_name_kana %>)</span>
             </p>
           </header>
           <div class="card-content">
+            所属会社： <%= @agent.company_name %><br>
+            場所： <%= @agent.company_location %><br>
             <div class="content average-score">
               <div class="star-rating mb-2">
                 <div class="star-rating-front" style="width: <%= @agent.review_score_percentage %>%">★★★★★</div>
