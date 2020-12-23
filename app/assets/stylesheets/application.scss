@@ -20,8 +20,8 @@ body {
   min-height: 100vh;
   color: white;
   background: linear-gradient(to bottom, rgba(6,105,164,0.48923319327731096) 0%, rgba(0,212,255,0) 100%),url(stones.jpg);  /* 背景画像指定 */
-  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
-  background-position: center;    /* 背景の位置指定 */
+  background-repeat:  no-repeat;
+  background-position: center;
   background-size: cover;
   font-family: sans-serif;
 }
