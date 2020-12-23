@@ -19,7 +19,10 @@
 body {
   min-height: 100vh;
   color: white;
-  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  background: linear-gradient(to bottom, rgba(6,105,164,0.48923319327731096) 0%, rgba(0,212,255,0) 100%),url(stones.jpg);  /* 背景画像指定 */
+  background-repeat:  no-repeat;  /* 背景の繰り返し設定 */
+  background-position: center;    /* 背景の位置指定 */
+  background-size: cover;
   font-family: sans-serif;
 }
 
@@ -39,7 +42,7 @@ a {
 }
 
 .review_card {
-  background-color: rgb(236, 253, 250);
+  background-color: rgb(240, 240, 240);
 }
 
 .card-footer-item {

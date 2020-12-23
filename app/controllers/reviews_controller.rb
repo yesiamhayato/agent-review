@@ -23,7 +23,6 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @agent = Agent.find(params[:agent_id])   #定義しないとエラーが出る
     @review = Review.find(params[:id])       #定義しないとエラーが出る
     if @review.update(review_params)
       redirect_to agent_reviews_path(@review.agent_id)
