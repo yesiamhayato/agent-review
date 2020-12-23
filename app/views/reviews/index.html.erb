@@ -28,7 +28,7 @@
 
 
         <% @reviews.each do |review| %>
-        <div class="card mb-4">
+        <div class="card review_card mb-4">
           <header class="card-header">
             <div class="card-header-title">
               <%= review.user.nickname %>
@@ -44,6 +44,19 @@
               <div class="has-text-right is-italic" ><%= l review.updated_at %></div>
             </div>
           </div>
+          <% if user_signed_in? %>
+            <%if current_user.id == review.user_id %>
+              <footer class="card-footer">
+                <%= link_to '編集する',  edit_agent_review_path(review.agent_id, review.id), method: :get, class: "card-footer-item" %>
+                <a href="#" class="card-footer-item">削除する</a> <%# 削除ルーティングルする%>
+              </footer>
+            <% else %>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">コメントする</a>
+              </footer>
+            <% end %>
+          <% end %>
+
         </div>
         <% end %>
       </div>

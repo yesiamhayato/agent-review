@@ -15,7 +15,9 @@ class ReviewsController < ApplicationController
       @agent = Agent.find(params[:agent_id])
       render "agents/show"
     end
+  end
 
+  def edit
   end
 
   private
