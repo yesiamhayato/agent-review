@@ -32,6 +32,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])       #定義しないとエラーが出る
+    @review.destroy if @review.user_id == current_user.id
+    redirect_to agent_reviews_path(params[:agent_id])
+  end
+
   private
 
   def review_params

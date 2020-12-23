@@ -47,8 +47,8 @@
           <% if user_signed_in? %>
             <%if current_user.id == review.user_id %>
               <footer class="card-footer">
-                <%= link_to '編集する',  edit_agent_review_path(review.agent_id, review.id), method: :get, class: "card-footer-item" %>
-                <a href="#" class="card-footer-item">削除する</a> <%# 削除ルーティングルする%>
+                <%= link_to '編集する', edit_agent_review_path(review.agent_id, review.id), method: :get, class: "card-footer-item" %>
+                <%= link_to '削除する', agent_review_path(review.agent_id, review.id), method: :delete, class: "card-footer-item" %>
               </footer>
             <% else %>
               <footer class="card-footer">
