@@ -1,14 +1,17 @@
 <section class="section mt-6">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-5">
+      <div class="column is-two-thirds">
         <div class="card mb-6">
           <header class="card-header">
             <p class="card-header-title">
               <%= @agent.last_name %> <%= @agent.first_name %>
+              <span class="has-text-weight-light is-italic is-size-7">(<%= @agent.last_name_kana %> <%= @agent.first_name_kana %>)</span>
             </p>
           </header>
           <div class="card-content">
+            所属会社： <%= @agent.company_name %><br>
+            場所： <%= @agent.company_location %><br>
             <div class="content average-score">
               <div class="star-rating mb-2">
                 <div class="star-rating-front" style="width: <%= @agent.review_score_percentage %>%">★★★★★</div>
@@ -20,24 +23,42 @@
             </div>
           </div>
         </div>
-        <div class="is-centered">
-        <table class="table is-fullwidth is-hoverable is-bordered">
-          <thead class="has-text-centered">
-            <tr>
-              <th>ユーザー名</th><th>点数</th><th>口コミ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.nickname %></td>
-                <td><%= review.score %></td>
-                <td><%= simple_format(review.content) %></td>
-              </tr>
+
+        <h4 class="title is-2 is-centered has-text-white">クチコミ</h4>
+
+
+        <% @reviews.each do |review| %>
+        <div class="card review_card mb-4">
+          <header class="card-header">
+            <div class="card-header-title">
+              <%= review.user.nickname %>
+            </div>
+          </header>
+          <div class="card-content pt-2">
+            <div class="content">
+              <div class="star-rating mb-4">
+                <div class="star-rating-front" style="width: <%= review.score * 20 %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <%= simple_format(review.content) %>
+              <div class="has-text-right is-italic" ><%= l review.updated_at %></div>
+            </div>
+          </div>
+          <% if user_signed_in? %>
+            <%if current_user.id == review.user_id %>
+              <footer class="card-footer">
+                <%= link_to '編集する', edit_agent_review_path(review.agent_id, review.id), method: :get, class: "card-footer-item" %>
+                <%= link_to '削除する', agent_review_path(review.agent_id, review.id), method: :delete, class: "card-footer-item" %>
+              </footer>
+            <% else %>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">コメントする</a>
+              </footer>
             <% end %>
-          </tbody>
-        </table>
+          <% end %>
+
         </div>
+        <% end %>
       </div>
     </div>
   </div>
