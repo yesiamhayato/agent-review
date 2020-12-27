@@ -1,1 +1,51 @@
-<h1>agents#new</h1>
+<div class="title is-2 is-centered has-text-white mt-6 mb-0">新規営業マン登録</div>
+<section class="section pt-0">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="mt-3">
+          <%= form_with model: @agent, url: agents_path, local: true do |f| %>
+
+          <div class="field">
+            <label class="label has-text-white">お名前</label>
+            <div class="columns">
+              <div class="control column">
+                <%= f.text_field :last_name, class: "input ", placeholder: "姓" %>
+              </div>
+              <div class="control column">
+                <%= f.text_field :first_name, class: "input ", placeholder: "名" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label has-text-white">お名前カナ(全角)</label>
+            <div class="columns">
+              <div class="control column">
+                <%= f.text_field :last_name_kana, class: "input ", placeholder: "姓カナ" %>
+              </div>
+              <div class="control column">
+                <%= f.text_field :first_name_kana, class: "input ", placeholder: "名カナ" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label has-text-white">所属している会社情報</label>
+            <div class="control">
+              <%= f.text_field :company_name, class: "input ", placeholder: "会社名" %>
+            </div>
+            <div class="control mt-2">
+              <%= f.text_field :company_location, class: "input ", placeholder: "住所(例: 東京都千代田区永田町1-7-1)" %>
+            </div>
+          </div>
+
+          <%= f.submit "登録する", class: "button is-primary  mt-3" %>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
