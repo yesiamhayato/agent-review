@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])       # 定義しないとエラーが出る
+    @review = Review.find(params[:id])       # DRY
     if @review.update(review_params)
       redirect_to agent_reviews_path(@review.agent_id)
     else
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])       # 定義しないとエラーが出る
+    @review = Review.find(params[:id])       # DRY
     @review.destroy if @review.user_id == current_user.id
     redirect_to agent_reviews_path(params[:agent_id])
   end

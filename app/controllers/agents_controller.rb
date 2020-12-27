@@ -9,4 +9,7 @@ class AgentsController < ApplicationController
     @agent = Agent.find(params[:id])
     @review = Review.new
   end
+  
+  def create
+  end
 end
