@@ -24,7 +24,7 @@ class AgentsController < ApplicationController
   end
 
   def search
-    @agents = Tweet.search(params[:keyword])
+    @agents = Agent.search(params[:keyword])
   end
 
 

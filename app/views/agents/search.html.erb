@@ -1,0 +1,56 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with(url: search_agents_path, local: true, method: :get, class: "field has-addons") do |form| %>
+          <%= form.text_field :keyword, placeholder: "営業マンを検索する", class: "input" %>
+          <%= form.submit "検索", class: "button is-info" %>
+        <% end %>
+        <div>
+          次の検索結果を表示しています:<span class="has-text-weight-bold is-size-4"> <%= params[:keyword] %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <% @agents.each do |agent| %>
+          <div class="card mb-6">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= agent.last_name %> <%= agent.first_name %>
+                <span class="has-text-weight-light is-italic is-size-7">(<%= agent.last_name_kana %> <%= agent.first_name_kana %>)</span>
+              </p>
+            </header>
+            <div class="card-content">
+              所属会社： <%= agent.company_name %><br>
+              場所： <%= agent.company_location %><br>
+              <div class="content">
+                <div class="content average-score">
+                  <div class="star-rating mb-2">
+                    <div class="star-rating-front" style="width:  <%= agent.review_score_percentage %>%">★★★★★</div>
+                    <div class="star-rating-back">★★★★★</div>
+                  </div>
+                  <div class="average-score-display ml-3 pt-2">
+                  <%= agent.avg_score %>点（<%= agent.reviews.count %>件のレビュー）
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+            <%= link_to agent_reviews_path(agent), class: "button card-footer-item" do %>
+            レビューを見る
+            <% end %>
+            <%= link_to agent_path(agent), class: "button card-footer-item" do %>
+            レビューを書く
+            <% end %>
+            </footer>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
