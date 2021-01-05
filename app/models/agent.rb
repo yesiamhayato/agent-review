@@ -30,6 +30,14 @@ class Agent < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    if search != ""
+      Agent.where('text LIKE(?)', "%#{search}%")
+    else
+      Agent.all
+    end
+  end
+
   has_many :reviews, dependent: :destroy
   belongs_to :user
 end
