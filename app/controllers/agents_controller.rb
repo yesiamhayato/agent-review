@@ -23,6 +23,10 @@ class AgentsController < ApplicationController
     end
   end
 
+  def search
+    @agents = Agent.search(params[:keyword])
+  end
+
 
   private
 

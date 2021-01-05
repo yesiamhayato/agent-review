@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section pb-0">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-6">
@@ -6,10 +6,14 @@
           <%= form.text_field :keyword, placeholder: "営業マンを検索する", class: "input" %>
           <%= form.submit "検索", class: "button is-info" %>
         <% end %>
+        <div>
+          次の検索結果を表示しています:<span class="has-text-weight-bold is-size-4"> <%= params[:keyword] %></span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -47,6 +51,11 @@
             </footer>
           </div>
         <% end %>
+        <div class="is-centered">
+          <%= link_to new_agent_path, class: "button is-primary  mt-3" do %>
+            新しい営業マンを追加する
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
