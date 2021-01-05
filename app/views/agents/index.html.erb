@@ -1,4 +1,16 @@
-<section class="section mt-6">
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with(url: search_agents_path, local: true, method: :get, class: "field has-addons") do |form| %>
+          <%= form.text_field :keyword, placeholder: "営業マンを検索する", class: "input" %>
+          <%= form.submit "検索", class: "button is-info" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-5">
