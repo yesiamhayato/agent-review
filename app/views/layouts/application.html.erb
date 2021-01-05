@@ -28,7 +28,10 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <%= link_to agents_path, class: "navbar-item" do %>
-            不動産営業マン一覧
+            営業マン一覧
+          <% end %>
+          <%= link_to new_agent_path, class: "navbar-item" do %>
+            新規営業マン登録
           <% end %>
         </div>
         <div class="navbar-end">
