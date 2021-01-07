@@ -34,7 +34,7 @@ nickname、メールアドレス、パスワードを入力することによっ
 
 ### レビュー投稿/編集/削除機能
 特定の営業マンに対してレビューを書くことができる。自分の書いたレビューに限り、編集と削除をすることができる。
-[![Image from Gyazo](https://i.gyazo.com/ea1bf6d745949e4a9de3cd67f82c2e1d.gif)](https://gyazo.com/ea1bf6d745949e4a9de3cd67f82c2e1d)  
+![ea1bf6d745949e4a9de3cd67f82c2e1d](https://user-images.githubusercontent.com/73696004/103879333-0da7ce00-511b-11eb-871c-692142666417.gif)
 ↓星の数をクリックすることで評価をすることができる。  
 [![Image from Gyazo](https://i.gyazo.com/82c8c80888dd911f1218ce0de176f597.gif)](https://gyazo.com/82c8c80888dd911f1218ce0de176f597)
 
@@ -50,10 +50,12 @@ nickname、メールアドレス、パスワードを入力することによっ
 
 
 # :five:実装予定の機能
-## レビューに対する「同意」・「反対」機能
+### レビューに対する「同意」・「反対」機能
 
 # :six:課題
-## テストコード未実装
+※以下の課題は進化版アプリケーションで是正※
+- テストコード未実装
+- コードの可読性の向上、DRY原則に従う
 
 
 # :seven:データベース設計
@@ -66,7 +68,7 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 
 
 
-# テーブル設計
+# :nine:テーブル設計
 
 ## users テーブル
 
