@@ -50,10 +50,6 @@
                 <%= link_to '編集する', edit_agent_review_path(review.agent_id, review.id), method: :get, class: "card-footer-item" %>
                 <%= link_to '削除する', agent_review_path(review.agent_id, review.id), method: :delete, class: "card-footer-item" %>
               </footer>
-            <% else %>
-              <footer class="card-footer">
-                <a href="#" class="card-footer-item">コメントする</a>
-              </footer>
             <% end %>
           <% end %>
 
