@@ -9,7 +9,7 @@
 https://agent-review.herokuapp.com/
 
 ## テスト用アカウント
-email: tester@test.com
+email: tester@test.com  
 password: 12345abc
 
 # 概要
