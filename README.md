@@ -2,12 +2,15 @@
 
 # Smoothly(仮)
 アプリのスクショ
+<img width="1440" alt="スクリーンショット 2021-01-07 16 01 58" src="https://user-images.githubusercontent.com/73696004/103862901-4045cc80-5103-11eb-8d07-f72930d25704.png">
 
 
 ## App URL
 https://agent-review.herokuapp.com/
 
 ## テスト用アカウント
+email: tester@test.com
+password: 12345abc
 
 # 概要
 ## このアプリケーションでできることを記述
