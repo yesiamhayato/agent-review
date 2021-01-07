@@ -52,6 +52,7 @@ nickname、メールアドレス、パスワードを入力することによっ
 
 # :five:課題
 ※以下の課題は進化版アプリケーションで是正予定※
+- Coffee Scriptを使用しない
 - テストコード未実装
 - コードの可読性の向上、DRY原則に従う
 
@@ -60,11 +61,24 @@ nickname、メールアドレス、パスワードを入力することによっ
 ER図  
 ![スクリーンショット 2021-01-07 20 10 18](https://user-images.githubusercontent.com/73696004/103886130-629c1200-5124-11eb-89e5-ab953ca7a9ac.png)
 
-# :seven:ローカルでの動作方法
-git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述。
-アプリケーション開発に使用した環境を併記する（パッケージやRubyのバージョンなど）。
+# :seven:使用技術
+### フロントエンド
+- HTML
+- CSS
+- BULMA
+- JavaScript
+- Coffee Script
+### バックエンド
+- Ruby : 2.6.5
+- Ruby on Rails : 6.0.3.4
 
-
+使用Gem
+- rubocop
+- devise
+- bulma-rails
+- pry-rails
+- active_hash
+- coffee-rails
 
 
 # :eight:テーブル設計
