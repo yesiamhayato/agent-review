@@ -31,8 +31,10 @@ class Agent < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
-      Agent.where('last_name LIKE(?) OR first_name LIKE(?) OR last_name_kana LIKE(?) OR first_name_kana LIKE(?) OR company_name LIKE(?) OR company_location LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    if search != ''
+      Agent.where(
+        'last_name LIKE(?) OR first_name LIKE(?) OR last_name_kana LIKE(?) OR first_name_kana LIKE(?) OR company_name LIKE(?) OR company_location LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"
+      )
     else
       Agent.all
     end

@@ -9,7 +9,7 @@ class AgentsController < ApplicationController
     @agent = Agent.find(params[:id])
     @review = Review.new
   end
-  
+
   def new
     @agent = Agent.new
   end
@@ -27,11 +27,10 @@ class AgentsController < ApplicationController
     @agents = Agent.search(params[:keyword])
   end
 
-
   private
 
   def agent_params
-    params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :company_name, :company_location).merge(user_id: current_user.id)
+    params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :company_name,
+                                  :company_location).merge(user_id: current_user.id)
   end
-
 end
