@@ -1,7 +1,6 @@
 # README
 
 # Smoothly(仮)
-アプリのスクショ
 <img width="1440" alt="スクリーンショット 2021-01-07 16 01 58" src="https://user-images.githubusercontent.com/73696004/103862901-4045cc80-5103-11eb-8d07-f72930d25704.png">
 
 
@@ -44,7 +43,9 @@ nickname、メールアドレス、パスワードを入力することによっ
 [![Image from Gyazo](https://i.gyazo.com/03cf896ce6f276427fbc2d7b0e67f999.gif)](https://gyazo.com/03cf896ce6f276427fbc2d7b0e67f999)
 
 ### 新規営業マン登録機能
-レビューを書きたい営業マンがまだ存在しない場合は、新しく営業マンを作成することができる。
+レビューを書きたい営業マンがまだ存在しない場合は、新しく営業マンを作成することができる。  
+![f32072d868574aa5268df7c2f69eac42](https://user-images.githubusercontent.com/73696004/103878316-932a7e80-5119-11eb-8743-f5ec37907c72.gif)
+
   
 
 
